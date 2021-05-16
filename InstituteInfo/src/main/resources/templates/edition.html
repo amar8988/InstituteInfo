@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8" />
+	<title>Modification</title>
+	<link rel="stylesheet" href="" th:href="@{/css/myStyle.css}" />
+</head>
+<body>
+	<form th:action="@{/modify}" th:object="${studentData}" method="post">
+		<table align="center">
+			<tr><td>Enter Student Id</td><td><input type="text" th:field="*{id}" /></td></tr>
+			<tr><td></td><td></td></tr>
+			<tr><td></td><td><input type="image" src="/image/submit.png" width="70" height="30" /></td></tr>
+		</table>
+	</form>
+</body>
+</html>
