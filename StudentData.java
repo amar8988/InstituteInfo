@@ -33,6 +33,18 @@ public class StudentData {
 	 * @Column(name="pay_date") List<Date> payDates;
 	 */
 	
+	public StudentData() {	}
+	
+	public StudentData(LeftStudentData leftStudentData) {
+		this.studentName = leftStudentData.getStudentName();
+		this.batch = leftStudentData.getBatch();
+		this.course = leftStudentData.getCourse();
+		this.fatherName = leftStudentData.getFatherName();
+		this.contactNumber = leftStudentData.getContactNumber();
+		this.joiningDate = leftStudentData.getJoiningDate();
+		this.startingDate = leftStudentData.getStartingDate();
+	}
+	
 	public int getId() {
 		return id;
 	}
