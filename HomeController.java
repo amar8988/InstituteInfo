@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
@@ -103,6 +104,7 @@ public class HomeController {
 	public String displayLeftStudent(Model model){
 		List<LeftStudentData> allLeftStudent = studService.getAllLeftStudent();
 		model.addAttribute("studList" , allLeftStudent);
+		model.addAttribute("leftStudentData", new LeftStudentData());
 		
 		return "leftDetail";
 	}
@@ -140,5 +142,15 @@ public class HomeController {
 		m.addAttribute("studentList", studentList);
 		
 		return "leftPayDateView";
+	}
+	
+	@PostMapping("/reJoining")
+	public String studentReJoining(@ModelAttribute LeftStudentData	leftStudentData , Model model) {
+		leftStudentData = studService.getLeftStudentById(leftStudentData);
+		StudentData studentData = new StudentData(leftStudentData);
+		
+		model.addAttribute("reJoinStudent", studentData);
+		
+		return "reJoin";
 	}
 }
