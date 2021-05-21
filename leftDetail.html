@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8" />
+	<title>Student details</title>
+	<link rel="stylesheet" href="" th:href="@{/css/myStyle.css}" />
+</head>
+<body>
+	<h3 align="right">
+		<a th:href="@{/login?logout}"><img src="/image/exit.png" width="50" /></a>
+	</h3>
+
+	<table border=1 align="center">
+		<tr>
+			<th>Id</th>
+			<th>Name</th>
+			<th>Joining date</th>
+			<th>Starting date</th>
+			<th>Batch</th>
+			<th>Course</th>
+			<th>Father's name</th>
+			<th>Contact number</th>
+			<th>Last date</th>
+			<th><a href="/leftPayDates">Pay date</a></th>
+			<td><form th:action="@{/}" >
+					<input type="image" src="/image/home.jpg" height="30" width="40" />
+				</form></td>
+		</tr>
+		
+		<div th:each="student : ${studList}">
+			<tr>
+				<td><div th:text="${student.id}"></div></td>
+				<td><div th:text="${student.studentName}"></div></td>
+				<td><div th:text="${student.joiningDate}"></div></td>
+				<td><div th:text="${student.startingDate}"></div></td>
+				<td><div th:text="${student.batch}"></div></td>
+				<td><div th:text="${student.course}"></div></td>
+				<td><div th:text="${student.fatherName}"></div></td>
+				<td><div th:text="${student.contactNumber}"></div></td>
+				<td><div th:text="${student.lastDate}"></div></td>
+				<td><form th:action="@{/reJoining/id=${student.id}}" method="post" >
+					<input type="submit" value="re-join" />
+				</form></td>
+			</tr>
+		</div>
+	</table>
+</body>
+</html>
