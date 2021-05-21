@@ -84,4 +84,10 @@ public class StudentDataService {
 		
 		return studentList;
 	}
+	
+	public LeftStudentData getLeftStudentById(LeftStudentData leftStudentData) {
+		leftStudentData = leftRepo.findById(leftStudentData.getId()).get();
+		
+		return leftStudentData;
+	}
 }
