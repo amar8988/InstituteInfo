@@ -144,12 +144,11 @@ public class HomeController {
 		return "leftPayDateView";
 	}
 	
-	@PostMapping("/reJoining")
-	public String studentReJoining(@ModelAttribute LeftStudentData	leftStudentData , Model model) {
-		leftStudentData = studService.getLeftStudentById(leftStudentData);
-		StudentData studentData = new StudentData(leftStudentData);
+	@PostMapping("/reJoining/{id}")
+	public String studentReJoining(@PathVariable int id , Model model) {
+		StudentData studentData = new StudentData(studService.getLeftStudentById(id));		//using parameter as LeftStudentData
 		
-		model.addAttribute("reJoinStudent", studentData);
+		model.addAttribute("studentData", studentData);
 		
 		return "reJoin";
 	}
