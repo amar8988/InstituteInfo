@@ -85,8 +85,8 @@ public class StudentDataService {
 		return studentList;
 	}
 	
-	public LeftStudentData getLeftStudentById(LeftStudentData leftStudentData) {
-		leftStudentData = leftRepo.findById(leftStudentData.getId()).get();
+	public LeftStudentData getLeftStudentById(int id) {
+		LeftStudentData leftStudentData = leftRepo.findById(id).get();
 		
 		return leftStudentData;
 	}
