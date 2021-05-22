@@ -1,12 +1,12 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-<meta charset="UTF-8" />
-<title>re-join student</title>
-<link rel="stylesheet" href="" th:href="@{/css/myStyle.css}" />
-</head>
+	<head>
+		<meta charset="UTF-8" />
+		<title>re-join student</title>
+		<link rel="stylesheet" href="" th:href="@{/css/myStyle.css}" />
+	</head>
 <body>
-	<form th:action="@{/registration}" th:object="${reJoinStudent}"
+	<form th:action="@{/registration}" th:object="${studentData}"
 		method="post">
 		<table align="center">
 			<tr></tr>
@@ -14,27 +14,27 @@
 			<tr></tr>
 			<tr>
 				<td>Name</td>
-				<td><input type="text" th:value="${reJoinStudent.studentName}" th:field="*{studentName}" /></td>
+				<td><input type="text" th:value="${studentData.studentName}" th:field="*{studentName}" /></td>
 			</tr>
 			<tr>
 				<td>Joining date</td>
-				<td><input type="date" th:value="${reJoinStudent.joiningDate}" th:field="*{joiningDate}" /></td>
+				<td><input type="date" th:value="${studentData.joiningDate}" th:field="*{joiningDate}" /></td>
 			</tr>
 			<tr>
 				<td>Batch</td>
-				<td><input type="text" th:value="${reJoinStudent.batch}" th:field="*{batch}" /></td>
+				<td><input type="text" th:value="${studentData.batch}" th:field="*{batch}" /></td>
 			</tr>
 			<tr>
 				<td>Course</td>
-				<td><input type="text" th:value="${reJoinStudent.course}" th:field="*{course}" /></td>
+				<td><input type="text" th:value="${studentData.course}" th:field="*{course}" /></td>
 			</tr>
 			<tr>
 				<td>Father's name</td>
-				<td><input type="text" th:value="${reJoinStudent.fatherName}" th:field="*{fatherName}" /></td>
+				<td><input type="text" th:value="${studentData.fatherName}" th:field="*{fatherName}" /></td>
 			</tr>
 			<tr>
 				<td>Contact number</td>
-				<td><input type="text" th:value="${reJoinStudent.contactNumber}" th:field="*{contactNumber}" /></td>
+				<td><input type="text" th:value="${studentData.contactNumber}" th:field="*{contactNumber}" /></td>
 			</tr>
 			<tr>
 				<td>Starting date</td>
