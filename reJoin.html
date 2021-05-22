@@ -9,6 +9,9 @@
 	<form th:action="@{/registration}" th:object="${reJoinStudent}"
 		method="post">
 		<table align="center">
+			<tr></tr>
+			<tr></tr>
+			<tr></tr>
 			<tr>
 				<td>Name</td>
 				<td><input type="text" th:value="${reJoinStudent.studentName}" th:field="*{studentName}" /></td>
@@ -39,6 +42,7 @@
 			</tr>
 			<tr>
 				<td><input type="image" src="/image/add.jpg" height="30" width="60" /></td>
+				<td><form th:action="@{/}"><input type="image" src="/image/cancel.jpg" height="30" width="60" /></form></td>
 			</tr>
 		</table>
 	</form>
