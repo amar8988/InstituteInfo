@@ -6,6 +6,10 @@
 	<link rel="stylesheet" href="" th:href="@{/css/myStyle.css}" />
 </head>
 <body>
+	<h3 align="left"><form th:action="@{/}" >
+					<input type="image" src="/image/home2.png" height="30" width="40" />
+	</form></h3>
+
 	<form th:action="@{/modify}" th:object="${studentData}" method="post">
 		<table align="center">
 			<tr><td>Enter Student Id</td><td><input type="text" th:field="*{id}" /></td></tr>
