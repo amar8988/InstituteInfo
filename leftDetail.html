@@ -7,8 +7,13 @@
 </head>
 <body>
 	<h3 align="right">
-		<a th:href="@{/login?logout}"><img src="/image/exit.png" width="50" /></a>
+		<a th:href="@{/login?logout}"><img src="/image/exit.png"
+			width="50" /></a>
 	</h3>
+	
+	<h3 align="left"><form th:action="@{/}" >
+					<input type="image" src="/image/home2.png" height="30" width="40" />
+	</form></h3>
 
 	<table border=1 align="center">
 		<tr>
@@ -22,9 +27,9 @@
 			<th>Contact number</th>
 			<th>Last date</th>
 			<th><a href="/leftPayDates">Pay date</a></th>
-			<td><form th:action="@{/}" >
+			<!-- <td><form th:action="@{/}" >
 					<input type="image" src="/image/home.jpg" height="30" width="40" />
-				</form></td>
+				</form></td> -->
 		</tr>
 		
 		<div th:each="student : ${studList}">
