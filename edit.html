@@ -8,13 +8,9 @@
 <body>
 	<h3 align="left"><form th:action="@{/}" >
 					<input type="image" src="/image/home2.png" height="30" width="40" />
-	</form></h3>
-	
-	<h3><form th:action="@{/}" >
-					<input type="image" src="/image/home2.png" height="30" width="40" />
 				</form></h3>
 	
-	<form th:action="@{editing}" th:object="${studentData}" method="post" >
+	<form th:action="@{/editing}" th:object="${studentData}" method="post" >
 		<table align="center">
 			<tr><td>Id</td><td><input type="hidden" th:text="${studentData.id}" th:field="*{id}" /></td></tr>
 			<tr><td>Name</td><td><input type="text" value="${studentData.studentName}" th:field="*{studentName}" /></td></tr>
