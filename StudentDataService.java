@@ -79,8 +79,8 @@ public class StudentDataService {
 		return studentList;
 	}
 	
-	public List<LeftStudentData> getLeftPayList(){
-		List<LeftStudentData> studentList = (List<LeftStudentData>)leftRepo.findAll();
+	public List<StudentPayList> getLeftPayList(){
+		List<StudentPayList> studentList = (List<StudentPayList>)payRepo.findAll();
 		
 		return studentList;
 	}
