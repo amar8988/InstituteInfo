@@ -43,7 +43,7 @@
 				<td><div th:text="${student.fatherName}"></div></td>
 				<td><div th:text="${student.contactNumber}"></div></td>
 				<td><div th:text="${student.lastDate}"></div></td>
-				<td><form th:action="@{/reJoining(id=${student.id})}" method="post" >
+				<td><form th:action="@{/reJoining/{id}(id=${student.id})}" >
 					<input type="submit" value="re-join" />
 				</form></td>
 			</tr>
