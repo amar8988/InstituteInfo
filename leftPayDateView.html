@@ -12,12 +12,12 @@
 
 	<table border=1 align="center">
 		<tr>
-			<td><form th:action="@{/}" >
-					<input type="image" src="/image/home.jpg" height="30" width="40" />
-				</form></td>
 			<th>Id</th>
 			<th>Name</th>
 			<th>Pay dates</th>
+			<td><form th:action="@{/}" >
+					<input type="image" src="/image/home.jpg" height="30" width="40" />
+				</form></td>
 		</tr>
 		
 		<div th:each="student : ${studentList}">
