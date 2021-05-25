@@ -144,7 +144,7 @@ public class HomeController {
 		return "leftPayDateView";
 	}
 	
-	@PostMapping("/reJoining/{id}")
+	@GetMapping("/reJoining/{id}")
 	public String studentReJoining(@PathVariable int id , Model model) {
 		StudentData studentData = new StudentData(studService.getLeftStudentById(id));		//using parameter as LeftStudentData
 		
