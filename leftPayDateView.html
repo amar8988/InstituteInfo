@@ -23,7 +23,7 @@
 		<div th:each="student : ${studentList}">
 			<tr>
 				<td></td>
-				<td><div th:text="${student.id}"></div></td>
+				<td><div th:text="${student.studentId}"></div></td>
 				<td><div th:text="${student.studentName}"></div></td>
 				<span th:each="pay_date : ${student.payDates}">
 					<td><div th:text="${pay_date}"></div></td>
