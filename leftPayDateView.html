@@ -2,34 +2,30 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
 	<meta charset="UTF-8" />
-	<title>Student details</title>
+	<title>Release</title>
 	<link rel="stylesheet" href="" th:href="@{/css/myStyle.css}" />
 </head>
 <body>
-	<h3 align="right">
-		<a th:href="@{/login?logout}"><img src="/image/exit.png" width="50" /></a>
-	</h3>
+	<h3 align="left"><form th:action="@{/}" >
+					<input type="image" src="/image/home2.png" height="30" width="40" />
+	</form></h3>
 
-	<table border=1 align="center">
-		<tr>
-			<th>Id</th>
-			<th>Name</th>
-			<th>Pay dates</th>
-			<td><form th:action="@{/}" >
-					<input type="image" src="/image/home.jpg" height="30" width="40" />
-				</form></td>
-		</tr>
-		
-		<div th:each="student : ${studentList}">
+	<form th:action="@{/delete}" th:object="${leftStudentData}"
+		method="post">
+		<table align="center">
+			<tr>
+				<td>Enter Student Id</td>
+				<td><input type="text" th:field="*{id}" /></td>
+			</tr>
+			<tr>
+				<td>Last date</td>
+				<td><input type="date" th:field="*{lastDate}" /></td>
+			</tr>
 			<tr>
 				<td></td>
-				<td><div th:text="${student.studentId}"></div></td>
-				<td><div th:text="${student.studentName}"></div></td>
-				<span th:each="pay_date : ${student.payDates}">
-					<td><div th:text="${pay_date}"></div></td>
-				</span>
+				<td><input type="image" src="/image/submit.png" width="70" height="30" /></td>
 			</tr>
-		</div>
-	</table>
+		</table>
+	</form>
 </body>
 </html>
