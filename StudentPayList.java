@@ -20,7 +20,7 @@ public class StudentPayList {
 	private int studentId;
 	private String studentName;
 	@ElementCollection
-	@CollectionTable(name="stud_pay_list",joinColumns=@JoinColumn(name=
+	@CollectionTable(name="student_pay_list",joinColumns=@JoinColumn(name=
 	  "student_id"))
 	@Column(name="student_date")
 	private List<Date> payDates;
