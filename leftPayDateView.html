@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
 	<meta charset="UTF-8" />
-	<title>Release</title>
+	<title>Student details</title>
 	<link rel="stylesheet" href="" th:href="@{/css/myStyle.css}" />
 </head>
 <body>
@@ -10,22 +10,23 @@
 					<input type="image" src="/image/home2.png" height="30" width="40" />
 	</form></h3>
 
-	<form th:action="@{/delete}" th:object="${leftStudentData}"
-		method="post">
-		<table align="center">
-			<tr>
-				<td>Enter Student Id</td>
-				<td><input type="text" th:field="*{id}" /></td>
-			</tr>
-			<tr>
-				<td>Last date</td>
-				<td><input type="date" th:field="*{lastDate}" /></td>
-			</tr>
+	<table border=1 align="center">
+		<tr>
+			<th>Id</th>
+			<th>Name</th>
+			<th>Pay dates</th>
+		</tr>
+		
+		<div th:each="student : ${studentList}">
 			<tr>
 				<td></td>
-				<td><input type="image" src="/image/submit.png" width="70" height="30" /></td>
+				<td><div th:text="${student.studentId}"></div></td>
+				<td><div th:text="${student.studentName}"></div></td>
+				<span th:each="pay_date : ${student.payDates}">
+					<td><div th:text="${pay_date}"></div></td>
+				</span>
 			</tr>
-		</table>
-	</form>
+		</div>
+	</table>
 </body>
 </html>
