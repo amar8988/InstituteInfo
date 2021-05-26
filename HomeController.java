@@ -112,7 +112,6 @@ public class HomeController {
 	@GetMapping("/payDates")
 	public String getPayDates(Model m) {
 		List<StudentPayList> studentPayList = studService.getPayList();
-		//List<StudentPayList> studentPayList = studService.
 		m.addAttribute("studentPayList", studentPayList);
 		
 		return "payDateView";
