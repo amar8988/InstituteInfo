@@ -20,9 +20,9 @@ public class StudentPayList {
 	private int studentId;
 	private String studentName;
 	@ElementCollection
-	@CollectionTable(name="stud_pay_date",joinColumns=@JoinColumn(name=
+	@CollectionTable(name="stud_pay_list",joinColumns=@JoinColumn(name=
 	  "student_id"))
-	@Column(name="pay_date")
+	@Column(name="student_date")
 	private List<Date> payDates;
 	
 	public int getId() {
