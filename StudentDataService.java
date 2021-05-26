@@ -87,6 +87,7 @@ public class StudentDataService {
 	
 	public LeftStudentData getLeftStudentById(int id) {
 		LeftStudentData leftStudentData = leftRepo.findById(id).get();
+		leftStudentData.setStartingDate(null);
 		
 		return leftStudentData;
 	}
