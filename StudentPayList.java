@@ -21,6 +21,8 @@ public class StudentPayList {
 	@Column(name="pay_date")
 	private List<Date> payDates;
 	
+	public StudentPayList() { }
+	
 	public StudentPayList(StudentData studentData) {
 		this.studId = studentData.getId();
 		this.studName = studentData.getStudentName();
