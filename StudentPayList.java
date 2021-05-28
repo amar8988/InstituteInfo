@@ -27,15 +27,19 @@ public class StudentPayList {
 		this.studId = studentData.getId();
 		this.studName = studentData.getStudentName();
 	}
+	
 	public int getStudId() {
 		return studId;
 	}
+	
 	public void setStudId(int studId) {
 		this.studId = studId;
 	}
+	
 	public String getStudName() {
 		return studName;
 	}
+	
 	public void setStudName(String studName) {
 		this.studName = studName;
 	}
