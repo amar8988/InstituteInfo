@@ -2,6 +2,7 @@ package com.kush.service;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -58,8 +59,19 @@ public class StudentDataService {
 		return (List<LeftStudentData>)leftRepo.findAll();
 	}
 	
-	public List<StudentPayList> getPayList(){
-		List<StudentPayList> studentPayList = (List<StudentPayList>)payRepo.findAll();
+	public List<StudentPayList> getStudentPayments(){
+		List<StudentData> students = (List<StudentData>) repo.findAll();
+		List<StudentPayList> studentPayList = null;
+		for(StudentData student : students) {
+			StudentPayList studentPay = new StudentPayList(student);
+			Optional<List<Date>> optionalPayList = payRepo.getPayListById(studentPay.getStudId());
+			if(optionalPayList.isPresent())
+				studentPay.setPayDates(optionalPayList.get());
+			else
+				studentPay.setPayDates(null);
+			
+			studentPayList.add(studentPay);
+		}
 		
 		return studentPayList;
 	}
@@ -90,5 +102,13 @@ public class StudentDataService {
 		leftStudentData.setStartingDate(null);
 		
 		return leftStudentData;
+	}
+
+	public void addPayDate(int id, Date payDate) {
+		StudentData studentData = repo.findById(id).get();
+		StudentPayList studentPayList = new StudentPayList(studentData);
+		List<Date> payDates = payRepo.getPayListById(id).get();
+		payDates.add(payDate);
+		payRepo.save(studentPayList);
 	}
 }
