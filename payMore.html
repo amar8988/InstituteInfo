@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8" />
+	<title>Pay more</title>
+</head>
+<body>
+	<h3 align="left"><form th:action="@{/}" >
+					<input type="image" src="/image/home2.png" height="30" width="40" />
+				</form></h3>
+	
+	<form th:action="@{/addPayment(id=${id})}" method="post">
+		<table align="center">
+			<tr><th>Id</th><th th:text="${id}"></th></tr>
+			<tr><td>Pay date</td>
+				<td><input type="date" th:field="*{payDate}" /></td></tr>
+				<tr><td><input type="image" src="/image/submit.png" width="70" height="30" /></td></tr>
+		</table>
+	</form>
+</body>
+</html>
