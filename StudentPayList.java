@@ -7,57 +7,39 @@ import javax.persistence.CollectionTable;
 import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 
 @Entity
 public class StudentPayList {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int id;
-	private int studentId;
-	private String studentName;
+	private int studId;
+	private String studName;
 	@ElementCollection
-	@CollectionTable(name="student_pay_list",joinColumns=@JoinColumn(name=
-	  "student_id"))
-	@Column(name="student_date")
+	@CollectionTable(name="stud_pay_list",joinColumns=@JoinColumn(name=
+	  "stud_id"))
+	@Column(name="pay_date")
 	private List<Date> payDates;
 	
-	public int getId() {
-		return id;
+	public StudentPayList(StudentData studentData) {
+		this.studId = studentData.getId();
+		this.studName = studentData.getStudentName();
 	}
-	public void setId(int id) {
-		this.id = id;
+	public int getStudId() {
+		return studId;
 	}
-	public int getStudentId() {
-		return studentId;
+	public void setStudId(int studId) {
+		this.studId = studId;
 	}
-	
-	public void setStudentId(int studentId) {
-		this.studentId = studentId;
+	public String getStudName() {
+		return studName;
 	}
-	
-	public String getStudentName() {
-		return studentName;
-	}
-	
-	public void setStudentName(String studentName) {
-		this.studentName = studentName;
-	}
-	
-	public List<Date> getPayDates() {
-		return payDates;
-	}
-	
-	public void setPayDates(List<Date> payDates) {
-		this.payDates = payDates;
+	public void setStudName(String studName) {
+		this.studName = studName;
 	}
 	
 	@Override
 	public String toString() {
-		return "StudentPayList [id=" + id + ", studentId=" + studentId + ", studentName=" + studentName + ", payDates="
-				+ payDates + "]";
+		return "StudentPayList [studId=" + studId + ", studName=" + studName + ", payDates=" + payDates + "]";
 	}
 }
