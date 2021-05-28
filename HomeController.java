@@ -1,6 +1,22 @@
 package com.kush.controller;
 
 import java.util.Date;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.kush.model.LeftStudentData;
+import com.kush.model.StudentData;
+import com.kush.model.StudentPayList;
+import com.kush.service.StudentDataService;
 
 @Controller
 public class HomeController {
