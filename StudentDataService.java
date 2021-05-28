@@ -1,5 +1,6 @@
 package com.kush.service;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
@@ -61,7 +62,7 @@ public class StudentDataService {
 	
 	public List<StudentPayList> getStudentPayments(){
 		List<StudentData> students = (List<StudentData>) repo.findAll();
-		List<StudentPayList> studentPayList = null;
+		List<StudentPayList> studentPayList = new ArrayList<>();
 		for(StudentData student : students) {
 			StudentPayList studentPay = new StudentPayList(student);
 			Optional<List<Date>> optionalPayList = payRepo.getPayListById(studentPay.getStudId());
