@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8" />
+	<title>Student payments</title>
+</head>
+<body>
+	<h3 align="left"><form th:action="@{/}" >
+					<input type="image" src="/image/home2.png" height="30" width="40" />
+				</form></h3>
+	
+	<table align="center">
+		<tr><th>Id</th></tr>
+		<tr><th>Name</th></tr>
+		<tr><th>Payments</th></tr>
+		
+		<tr th:each="pay : ${payList}">
+			<td th:text="${pay.studId}"></td>
+			<td th:text="${pay.studName}"></td>
+			<span th:each="payDate : ${payDates}">
+				<td th:text="${payDate}"></td>
+			</span>
+			<td><a th:href="@{/payMore/{id}(id=${pay.studId})}">pay_again</a></td>
+		</tr>
+	</table>
+</body>
+</html>
