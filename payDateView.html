@@ -25,7 +25,7 @@
 				<span th:each="pay_date : ${studentPay.payDates}">
 					<td><div th:text="${pay_date}"></div></td>
 				</span>
-				<td><a th:href="@{/pay(id=${student.studentId})}">Pay more</a></td>
+				<td><a th:href="@{/pay(id=${studentPay.studentId})}">Pay more</a></td>
 			</tr>
 		</div>
 	</table>
