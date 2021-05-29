@@ -3,7 +3,6 @@
 <head>
 	<meta charset="UTF-8" />
 	<title>Student payments</title>
-	<link rel="stylesheet" href="" th:href="@{/css/myStyle.css}" />
 </head>
 <body>
 	<h3 align="left"><form th:action="@{/}" >
@@ -18,10 +17,10 @@
 		<tr th:each="pay : ${payList}">
 			<td th:text="${pay.studId}"></td>
 			<td th:text="${pay.studName}"></td>
-			<span th:each="payDate : ${payDates}">
+			<span th:each="payDate : ${pay.payDates}">
 				<td th:text="${payDate}"></td>
 			</span>
-			<td><a th:href="@{/payMore/{id}(id=${pay.studId})}">pay more</a></td>
+			<td><a th:href="@{/payMore/{id}(id=${pay.studId})}">pay_again</a></td>
 		</tr>
 	</table>
 </body>
