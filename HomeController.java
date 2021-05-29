@@ -125,17 +125,17 @@ public class HomeController {
 	}
 	
 	@PostMapping("/afterPayMore")
-	public String getPayList(@ModelAttribute("date") Date date, @ModelAttribute StudentData studentData, Model m) {
+	public String getPayList(@ModelAttribute("date") Date date, @ModelAttribute StudentData studentData, Model model) {
 		List<StudentData> studentList = studService.getNewPayList(studentData.getId(), date);
-		m.addAttribute("studentList", studentList);
+		model.addAttribute("studentList", studentList);
 		
 		return "payDateView";
 	}
 	
 	@GetMapping("/leftPayDates")
-	public String getLeftPayDates(Model m) {
+	public String getLeftPayDates(Model model) {
 		List<StudentPayList> studentList = studService.getLeftPayList();
-		m.addAttribute("studentList", studentList);
+		model.addAttribute("studentList", studentList);
 		
 		return "leftPayDateView";
 	}
