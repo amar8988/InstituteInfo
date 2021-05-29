@@ -44,6 +44,14 @@ public class StudentPayList {
 		this.studName = studName;
 	}
 	
+	public List<Date> getPayDates() {
+		return payDates;
+	}
+
+	public void setPayDates(List<Date> payDates) {
+		this.payDates = payDates;
+	}
+
 	@Override
 	public String toString() {
 		return "StudentPayList [studId=" + studId + ", studName=" + studName + ", payDates=" + payDates + "]";
