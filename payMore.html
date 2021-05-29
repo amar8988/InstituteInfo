@@ -14,7 +14,7 @@
 		<table align="center">
 			<tr><th>Id</th><th th:text="${id}"></th></tr>
 			<tr><td>Pay date</td>
-				<td><input type="date" name="payDate" /></td></tr>
+				<td><input type="date" th:object="${payDate}" /></td></tr>
 				<tr><td></td><td><input type="image" src="/image/submit.png" width="70" height="30" /></td></tr>
 		</table>
 	</form>
