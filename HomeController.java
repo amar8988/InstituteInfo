@@ -120,6 +120,7 @@ public class HomeController {
 	@GetMapping("/payMore/{id}")
 	public String payMore(@PathVariable int id, Model model) {
 		model.addAttribute("id", id);
+		model.addAttribute("payDate", new Date());
 		
 		return "payMore";
 	}
@@ -150,7 +151,7 @@ public class HomeController {
 	}
 	
 	@PostMapping("/addPayment")
-	public ModelAndView addPayment(@RequestParam Integer id, @RequestParam Date payDate, Model model) {
+	public ModelAndView addPayment(@RequestParam Integer id, @ModelAttribute Date payDate, Model model) {
 		studService.addPayDate(id, payDate);
 		List<StudentData> studList = studService.getAllStudents();
 		mav.addObject("studList", studList);
