@@ -125,8 +125,8 @@ public class HomeController {
 	}
 	
 	@PostMapping("/afterPayMore")
-	public String getPayList(@ModelAttribute("date") Date da, @ModelAttribute StudentData studentData, Model m) {
-		List<StudentData> studentList = studService.getNewPayList(studentData.getId(), da);
+	public String getPayList(@ModelAttribute("date") Date date, @ModelAttribute StudentData studentData, Model m) {
+		List<StudentData> studentList = studService.getNewPayList(studentData.getId(), date);
 		m.addAttribute("studentList", studentList);
 		
 		return "payDateView";
