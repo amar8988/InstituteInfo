@@ -3,15 +3,16 @@
 <head>
 	<meta charset="UTF-8" />
 	<title>Student payments</title>
+	<link rel="stylesheet" href="" th:href="@{/css/myStyle.css}" />
 </head>
 <body>
 	<h3 align="left"><form th:action="@{/}" >
 					<input type="image" src="/image/home2.png" height="30" width="40" />
 				</form></h3>
 	
-	<table align="center">
-		<tr><th>Id</th></tr>
-			<th>Name</th></tr>
+	<table align="center" border="">
+		<tr><th>Id</th>
+			<th>Name</th>
 			<th>Payments</th></tr>
 		
 		<tr th:each="pay : ${payList}">
