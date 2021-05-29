@@ -110,6 +110,7 @@ public class StudentDataService {
 		StudentPayList studentPayList = new StudentPayList(studentData);
 		List<Date> payDates = payRepo.getPayListById(id).get();
 		payDates.add(payDate);
+		studentPayList.setPayDates(payDates);
 		payRepo.save(studentPayList);
 	}
 }
