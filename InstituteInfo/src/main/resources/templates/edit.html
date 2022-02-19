@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8" />
+	<title>Edit detail</title>
+	<link rel="stylesheet" href="" th:href="@{/css/myStyle.css}" />
+</head>
+<body>
+	<h3 align="left"><form th:action="@{/}" >
+					<input type="image" src="/image/home2.png" height="30" width="40" />
+				</form></h3>
+	
+	<form th:action="@{/editing}" th:object="${studentData}" method="post" >
+		<table align="center">
+			<tr><td>Id</td><td><input type="hidden" th:text="${studentData.id}" th:field="*{id}" /></td></tr>
+			<tr><td>Name</td><td><input type="text" value="${studentData.studentName}" th:field="*{studentName}" /></td></tr>
+			<tr><td>Joining date</td><td><input type="date" value="${studentData.joiningDate}" th:field="*{joiningDate}" /></td></tr>
+			<tr><td>Starting date</td><td><input type="date" value="${studentData.startingDate}" th:field="*{startingDate}" /></td></tr>
+			<tr><td>Batch</td><td><input type="text" value="${studentData.batch}" th:field="*{batch}" /></td></tr>
+			<tr><td>Course</td><td><input type="text" value="${studentData.course}" th:field="*{course}" /></td></tr>
+			<tr><td>Father's name</td><td><input type="text" value="${studentData.fatherName}" th:field="*{fatherName}" /></td></tr>
+			<tr><td>Contact number</td><td><input type="text" value="${studentData.contactNumber}" th:field="*{contactNumber}" /></td></tr>
+			<tr>
+				<th><p align="center"><input type="image" src="/image/edit.jpg" width="70" height="40" /></p></th></tr>
+		</table>
+	</form>
+</body>
+</html>
