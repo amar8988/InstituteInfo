@@ -1,0 +1,14 @@
+com\kush\service\StudentDataService.class
+com\kush\security\SecurityConfiguration.class
+com\kush\dao\UserRepository.class
+com\kush\model\StudentPayList.class
+com\kush\controller\HomeController.class
+com\kush\service\MyUserDetails.class
+com\kush\model\LeftStudentData.class
+com\kush\service\MyUserDetailsService.class
+com\kush\dao\LeftStudentRepository.class
+com\kush\dao\StudentRepository.class
+com\kush\dao\StudentPayRepository.class
+com\kush\model\User.class
+com\kush\InstituteInfoApplication.class
+com\kush\model\StudentData.class
