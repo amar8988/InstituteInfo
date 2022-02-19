@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8" />
+	<title>Student details</title>
+	<link rel="stylesheet" href="" th:href="@{/css/myStyle.css}" />
+</head>
+<body>
+	<h3 align="left"><form th:action="@{/}" >
+					<input type="image" src="/image/home2.png" height="30" width="40" />
+	</form></h3>
+
+	<table border=1 align="center">
+		<tr>
+			<th>Id</th>
+			<th>Name</th>
+			<th>Pay dates</th>
+		</tr>
+		
+		<div th:each="studentPay : ${studentPayList}">
+			<tr>
+				<td></td>
+				<td><div th:text="${studentPay.studentId}"></div></td>
+				<td><div th:text="${studentPay.studentName}"></div></td>
+				<span th:each="pay_date : ${studentPay.payDates}">
+					<td><div th:text="${pay_date}"></div></td>
+				</span>
+				<td><a th:href="@{/pay(id=${studentPay.studentId})}">Pay more</a></td>
+			</tr>
+		</div>
+	</table>
+</body>
+</html>
